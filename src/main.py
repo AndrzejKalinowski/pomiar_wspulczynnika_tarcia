@@ -2,15 +2,18 @@ import numpy as np
 import serial
 import time
 import math
-ser = serial.Serial('COM7', 115200)
-if __name__ == "__main__":
+
+def main():
+    ser = serial.Serial('COM7', 115200)
+
     x = 0
-    y = 0
     z = 0
     distance = 0
+    
     print("hello")
     time.sleep(2)
     print("starting mesurment")
+    
     while True:
         prev_distance = distance
         # reading data from the arduino
@@ -34,6 +37,11 @@ if __name__ == "__main__":
         
         delta_distance = distance - prev_distance
         if delta_distance >= 5 and delta_distance < 50:
-            pass
+            break
         # print(alpha)
         print(delta_distance)
+    print("movment detected")
+    print("alpha: ", alpha)
+    print("f = ", math.tan(math.radians(alpha)))
+if __name__ == "__main__":
+    main()
