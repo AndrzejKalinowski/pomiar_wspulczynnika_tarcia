@@ -136,3 +136,4 @@ dmypy.json
 .vscode/ipch
 wspulczynnik_tarcia/.pio
 wspulczynnik_tarcia/.vscode/extensions.json
+workspace.code-workspace
