@@ -12,7 +12,7 @@ void setup(void) {
   while (!Serial)
     delay(10); // will pause Zero, Leonardo, etc until serial console opens
 
-  Serial.println("Adafruit MPU6050 test!");
+  // Serial.println("Adafruit MPU6050 test!");
 
   // Try to initialize!
   if (!mpu.begin()) {
@@ -21,7 +21,7 @@ void setup(void) {
       delay(10);
     }
   }
-  Serial.println("MPU6050 Found!");
+  // Serial.println("MPU6050 Found!");
 
   //setupt motion detection
   mpu.setHighPassFilter(MPU6050_HIGHPASS_0_63_HZ);
@@ -36,8 +36,8 @@ void setup(void) {
   sensor.setMode(sensor.eContinuous,sensor.eHigh);
   //Laser rangefinder begins to work
   sensor.start();
-  Serial.println("");
-  delay(100);
+  // Serial.println("");
+  delay(10);
 }
 
 void loop() {
