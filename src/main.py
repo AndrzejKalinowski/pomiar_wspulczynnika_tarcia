@@ -48,11 +48,13 @@ def main():
             alpha = 0
         
         delta_distance = distance - prev_distance
+        # checking for movment
         if delta_distance >= 10 and delta_distance < 50:
             break
         # print(alpha)
         print(delta_distance)
 
+        # displaying the angle sing pygame
         display_surface.fill(white)
         text = font.render(str(alpha), True, blue, white)
         textRect = text.get_rect()
@@ -63,8 +65,10 @@ def main():
     print("movment detected")
     print("alpha: ", alpha)
     print("delta distance:", delta_distance)
+    # calculating the friction ccoefficient
     f = math.tan(math.radians(alpha))
     print("f = ", f)
+    # and displaying it
     display_surface.fill(white)
     text = font.render("f = " + str(f), True, green, white)
     textRect = text.get_rect()
@@ -72,5 +76,6 @@ def main():
     display_surface.blit(text, textRect)
     pygame.display.update()
     time.sleep(100)
+
 if __name__ == "__main__":
     main()
